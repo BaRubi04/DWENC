@@ -4,8 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Achetemele</title>
+    <script src="Agenda.js"></script>
 </head>
 <body>
-    <script src="Objetos5.js"></script>
+    <button onclick="let descripcion = prompt('descripcion: ');
+                     let prioridad = Number(prompt('prioridad: '));
+                     agenda.agregarTarea(descripcion, prioridad)">Agregar Tarea
+    </button>
+    <button onclick="agenda.listarTareas()">Listar Tareas</button>
+    <button onclick="let indice = Number(prompt('indice: '));
+                     agenda.marcarCompletada(indice)">Marcar Completada
+    </button>
+    <button onclick="indice = Number(prompt('indice: '));
+                     agenda.eliminarTarea(indice)">Eliminar Tarea</button>
+    <button onclick="agenda.listarPendientes()">Listar Pendientes</button>
+    <button onclick="agenda.ordenarPorPrioridad()">Ordenar por Prioridad</button>
 </body>
 </html>
