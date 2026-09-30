@@ -3,30 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furbo</title>
+    <title>More Players</title>
     <script src="morePlayers.js"></script>
 </head>
 <body>
     <button onclick="
         jugadoresMedioCampistas();
-    ">Jugadores Mediocampistas</button>
+    ">Jugadores mediocampistas [Nombre]</button>
     <button onclick="
         jugadores30OMasPartidos();
-    ">Jugadores con 30 o mas partidos jugados</button>
+    ">Jugadores con 30 o mas partidos jugados [Nombre]</button>
     <button onclick="
         nombresJugadoresInternacionales();
-    ">Jugadores Internacionales</button>
+    ">Jugadores internacionales [Nombre]</button>
     <button onclick="
-        
-    "></button>
+        console.log(nombresJugadoresPremierLeague(arrayNombres));
+    ">Jugadores Premier [Array]</button>
     <button onclick="
-        
-    "></button>
+        console.log(delanterosLigue1());
+    ">Delanteros Ligue 1 [Array]</button>
     <button onclick="
-        
-    "></button>
+        asistenciasFaltasYMinutosJugados();
+    ">Asistencias | Faltas | Minutos jugados</button>
     <button onclick="
-        
-    "></button>
+        console.clear();
+        let nombres = nombresJugadoresRoja();
+        nombres.forEach(jugador => console.log(jugador));//Es un string, no un objeto
+    ">Jugadores con rojas [Nombre]</button>
+    <button onclick="
+        jugadoresInternacionalesMenosDe5Partidos();
+    ">Jugadores internacionales de mas de 5 partidos [Nombre]</button>
 </body>
 </html>

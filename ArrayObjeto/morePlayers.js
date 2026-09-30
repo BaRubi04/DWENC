@@ -501,7 +501,12 @@ const jugadores = [
  * @return NO
  */
 
-    jugadoresMedioCampistas = () => console.log(jugadores.filter(jugador => jugador.posicion === "Mediocampista"));    
+    //jugadoresMedioCampistas = () => console.log(jugadores.filter(jugador => jugador.posicion === "Mediocampista"));    
+    jugadoresMedioCampistas = () => {
+      console.clear();/* He descubierto clear al pensar en una manera de limpiar la consola y poniendole el . a console */
+      let filtrado = jugadores.filter(jugador => jugador.posicion === "Mediocampista");
+      filtrado.forEach(jugador => console.log(jugador.nombre));
+    }
 
 /**
  * Ejercicio 2.
@@ -509,7 +514,11 @@ const jugadores = [
  * @return NO
  */
 
-    jugadores30OMasPartidos = () =>  console.log(jugadores.filter(jugador => jugador.partidosJugados >= 30));
+    jugadores30OMasPartidos = () =>  {
+      console.clear();
+      let filtrado = jugadores.filter(jugador => jugador.partidosJugados >= 30);
+      filtrado.forEach(jugador => console.log(jugador.nombre));
+    }
 
 /**
  * Ejercicio 3.
@@ -517,7 +526,11 @@ const jugadores = [
  * @return NO
  */
 
-    nombresJugadoresInternacionales = () => console.log(jugadores.filter(jugador => jugador.esInternacional == true));
+    nombresJugadoresInternacionales = () => {
+      console.clear();
+      let filtrado = jugadores.filter(jugador => jugador.esInternacional == true);
+      filtrado.forEach(jugador => console.log(jugador.nombre));
+    }
 
 /**
  * Ejercicio 4.
@@ -526,8 +539,15 @@ const jugadores = [
  * @param
  * @return Array nombres
  */
-
-
+    let arrayNombres = [];/* Dado a que el ejercicio pide un parámetro, pondré el array fuera. 
+    Empezará vacío cada vez que se ejecute el script ya que únicamente se manipula una copia local 
+    Importante ponerlo como parámetro también en HTML!!*/
+    nombresJugadoresPremierLeague = (arrayNombres) => {/* Se hará un console.log de la función en el html */
+      console.clear();
+      let filtrado = jugadores.filter(jugador => jugador.liga === "Premier League");/* Si está en la premier, meter como objeto entero en jugadoresPremier */
+      filtrado.forEach(jugador => arrayNombres.push(jugador.nombre));/* Meter el nombre de cada jugadorPremier en el array */
+      return arrayNombres;
+    }
 
 /**
  * Ejercicio 5.
@@ -535,7 +555,13 @@ const jugadores = [
  * @return Array nombres
  */
 
-
+    delanterosLigue1 = () => {/* Se hará un console.log de la función en el html */
+      console.clear();
+      let arrayNombres2 = [];
+      let filtrado = jugadores.filter(jugador => jugador.liga === "Ligue 1");
+      filtrado.forEach(jugador => arrayNombres2.push(jugador.nombre));
+      return arrayNombres2;
+    }
 
 /**
  * Ejercicio 6. 
@@ -543,7 +569,15 @@ const jugadores = [
  * @return NO
  */
 
-
+    asistenciasFaltasYMinutosJugados = () => {
+      console.clear();
+      jugadores.forEach(jugador => console.log(
+        jugador.nombre+": \n\t"+
+          jugador.estadisticas.asistencias+" asistencias\n\t"+
+          jugador.estadisticas.faltasSufridas+" faltas sufridas\n\t"+
+          jugador.estadisticas.minutosJugados+" minutos jugados"
+      ));
+    }
 
 /**
  * Ejercicio 7.
@@ -551,10 +585,21 @@ const jugadores = [
  * @return array nombre
  */
 
-
+    nombresJugadoresRoja = () => {/* Habrá un console log en html */
+      let arrayNombre3 = [];
+      let filtrado = jugadores.filter(jugador => jugador.estadisticas.tarjetas.some(tarjeta => tarjeta.tipo === "roja" && tarjeta.cantidad > 0));
+      filtrado.forEach(jugador => arrayNombre3.push(jugador.nombre));
+      return arrayNombre3;
+    }
 
 /**
  * Ejercicio 8.
  * Crea una funcion que devuelva los jugadores que son internacionales y que han jugado mas de 5 partidos 
  * @return NO
  */
+
+  jugadoresInternacionalesMenosDe5Partidos = () => {
+    console.clear();
+    let filtrado = jugadores.filter(jugador => jugador.esInternacional == true && jugador.partidosJugados > 5);
+    filtrado.forEach(jugador => console.log(jugador.nombre));
+  }
