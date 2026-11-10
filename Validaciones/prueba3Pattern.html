@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern</title>
+</head>
+<style>
+    :is(input,textarea):invalid {
+        background: red;
+        color: #fff;
+    }
+
+    ::placeholder {
+        color: darkred;
+    }
+
+</style>
+<body>
+    <form method="post" action="/send/">
+    <input type="text" name="username" placeholder="ManzDev"
+        minlength="5" maxlength="40" required pattern="[A-Za-z0-9]+">
+    </form>
+</body>
+</html>

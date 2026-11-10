@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pruebesita 1 UwU</title>
+</head>
+<style>
+    input,
+    textarea {
+        padding: 5px;
+        color: #fff;
+    }
+
+    ::placeholder {
+        color: darkgreen;
+    }
+
+    :is(input, textarea):invalid {
+        background: red;
+    }
+
+    :is(input, textarea):valid {
+        background: green;
+    }
+</style>
+<body>
+    <form method="post" action="/send/">
+        Usuario:
+        <input type="text" name="username" placeholder="Por ejemplo, Juan"
+                minlength="5" maxlength="40">
+        Password:
+        <input type="password" name="password" placeholder="Contraseña"
+                minlength="11">
+    </form>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <script src="Biblioteca.js"></script>
+</head>
+<body>
+    <h1>Gestión de la Biblioteca</h1>
+
+    <fieldset>
+        <legend>Libros</legend>
+        <input type="number" id="libroId" placeholder="id">
+        <input type="text" id="libroTitulo" placeholder="título">
+        <input type="text" id="libroAutor" placeholder="autor">
+        <input type="number" id="libroAnio" placeholder="año">
+        <input type="text" id="libroCategoria" placeholder="categoría">
+        <button onclick="botonAgregarLibro()">Añadir libro</button>
+        <br>
+        <input type="text" id="buscarTexto" placeholder="título o autor">
+        <button onclick="botonBuscarLibro()">Buscar libro</button>
+        <br>
+        <button onclick="botonListarDisponibles()">Listar disponibles</button>
+        <button onclick="botonLibrosPorCategoria()">Libros por categoría</button>
+    </fieldset>
+
+    <br><br>
+
+    <fieldset>
+        <legend>Usuarios</legend>
+        <input type="number" id="usuarioId" placeholder="id">
+        <input type="text" id="usuarioNombre" placeholder="nombre">
+        <input type="text" id="usuarioEmail" placeholder="email">
+        <button onclick="botonRegistrarUsuario()">Registrar usuario</button>
+        <br>
+        <button onclick="botonListarUsuarios()">Listar usuarios</button>
+    </fieldset>
+
+    <br><br>
+
+    <fieldset>
+        <legend>Préstamos</legend>
+        <input type="number" id="prestamoLibro" placeholder="id del libro">
+        <input type="number" id="prestamoUsuario" placeholder="id del usuario">
+        <input type="date" id="prestamoFecha">
+        <button onclick="botonPrestar()">Prestar libro</button>
+        <br>
+        <input type="number" id="devolverLibroId" placeholder="id del libro">
+        <button onclick="botonDevolver()">Devolver libro</button>
+        <br>
+        <input type="number" id="consultaUsuarioId" placeholder="id del usuario">
+        <button onclick="botonLibrosDeUsuario()">Libros que tiene el usuario</button>
+    </fieldset>
+
+    <br><br>
+
+    <fieldset>
+        <legend>Consultas</legend>
+        <button onclick="botonLibrosPrestados()">Libros prestados</button>
+        <button onclick="botonUsuariosConPrestamos()">Usuarios con préstamos</button>
+        <button onclick="botonPrestamosPorCategoria()">Préstamos por categoría</button>
+    </fieldset>
+
+    <h3>Resultado</h3>
+    <pre id="resultado"></pre>
+</body>
+</html>

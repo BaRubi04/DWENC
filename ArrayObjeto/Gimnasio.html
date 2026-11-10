@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gimnasio</title>
+    <script src="Gimnasio.js"></script>
+</head>
+<body>
+    <h1>Gestión del gimnasio</h1>
+    <fieldset><h3>Socios</h1>
+        <button onclick="
+            registrarSocios();
+        ">Registrar nuevos socios</button>
+        <button onclick="
+            listarSocios();
+        ">Listar socios registrados</button>
+    </fieldset>
+    
+    <fieldset><h3>Clases</h3>
+        <button onclick="
+            registrarNuevasClases();
+        ">Registrar nuevas clases</button>
+        <button onclick="
+            listarClases();
+        ">Listar clases</button>
+        <button onclick="
+            buscarClases();
+        ">Buscar clases</button>
+    </fieldset>
+    
+    <fieldset><h3>Inscripciones</h3>
+        <button onclick="
+            inscribir();
+        ">Registrar inscripcion</button>
+        <button onclick="
+            clasesInscritasPorSocio();
+        ">Clases inscritas por socio</button>
+        <button onclick="
+            sociosClase();
+        ">Socios de una clase</button>
+        <button onclick="
+            clasesConCupos();
+        ">Ver clases con cupos</button>
+        <button onclick="
+            sociosInscritosPorInstructor();
+        ">Socios inscritos por instructor</button>
+    </fieldset>
+    
+</body>
+</html>

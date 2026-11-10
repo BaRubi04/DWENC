@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login falso</title>
+</head>
+<style>
+    :is(input,textarea):invalid {
+        background: red;
+        color: #fff;
+    }
+
+    ::placeholder {
+        color: darkred;
+    }
+
+</style>
+<body>
+    <form>
+        <label for="usuario">Usuario: </label>
+        <input type="text" minlength="3" title="awa > 3">
+        <br><br>
+        <label for="contrasenia">Contraseña: </label>
+        <input type="password" pattern="[A-Za-z0-9]+">
+        <br><br>
+        <label for="correo">Correo: </label>
+        <input required pattern=".+@.+\.com"><br><br><br>
+        <input id="iwi" type="submit" value="Registrar">
+    </form>
+    <script>
+        const formulario = document.querySelector("form");
+        formulario.addEventListener("submit",function(){
+            alert("Usuario registrado");
+        })
+    </script>
+</body>
+</html>
