@@ -1,46 +1,18 @@
-document.addEventListener('mousemove', (evento) => {
-  const x = evento.clientX; // Posición horizontal (en píxeles)
-  const y = evento.clientY; // Posición vertical (en píxeles)
-  console.log(`Posición X: ${x}, Posición Y: ${y}`);
-});
+import { Casa } from './Casa.js';
 // Aquí poner los objetos Casa
-arrayCasas=[
-
-];
-arrayCoordenadasX=[
-    "632px",
-    "763px",
-    "829px",
-    "624px",
-    "781px",
-    "607px",
-    "699px",
-    "792px",
-    "621px",
-    "748px",
-    "623px",
-    "845px"
-];
-arrayCoordenadasY=[
-    "44px",
-    "15px",
-    "84px",
-    "122px",
-    "143px",
-    "265px",
-    "297px",
-    "288px",
-    "380px",
-    "499px",
-    "554px",
-    "570px"
-];
+let vacio = new Casa();
+arrayCasas=[targaryen,stark,baratheon,arryn,lannister,vacio,tully,tyrell,bolton,greyjoy,martell,vacio];
+arrayCoordenadasX=["632px","763px","829px","624px","781px","607px","699px","792px","621px","748px","623px","845px"];
+arrayCoordenadasY=["44px","15px","84px","122px","143px","265px","297px","288px","380px","499px","554px","570px"];
 for(let i=1; i<=12; i++){
     const kuadr0 = document.createElement("div");
     kuadr0.className = "kuadr0";
     kuadr0.style.left = arrayCoordenadasX[i];
     kuadr0.style.top = arrayCoordenadasY[i];
-    
+    kuadr0.id = arrayCasas[i].getNombre;
+    kuadr0.addEventListener("mouseover",function(){
+        
+    });
 }
 // POSICIONES (x LEFT,y TOP)
     //632, 44
