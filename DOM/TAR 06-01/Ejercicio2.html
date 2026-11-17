@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <p id="texto">Este texto debe poder ocultarse.</p>
+    <button id="boton">Ocultar</button>
+    <script>
+        const pe = document.getElementById("texto");
+        const boton = document.getElementById("boton");
+        boton.addEventListener("click",function(){
+            if(pe.hidden == true){
+                pe.hidden = false;
+                boton.textContent = "Mostrar";
+            }
+            else {
+                pe.hidden = true;
+                boton.textContent = "Ocultar";
+            }
+        });
+    </script>
+</body>
+</html>

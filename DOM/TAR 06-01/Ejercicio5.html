@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <button id="crear">Crear tarjeta</button>
+    <div id="contenedor"></div>
+    <script>
+        const botonCrear = document.getElementById("crear");
+        botonCrear.textContent = "Crear";
+        const granDiv = document.getElementById("contenedor");
+        granDiv.style.backgroundColor = "red";
+        granDiv.style.width = "500px";
+        granDiv.style.height = "500px";
+        botonCrear.addEventListener("click",function(){
+            const tarjeta = document.createElement("div");
+            tarjeta.className = "tarjeta";
+            tarjeta.style.backgroundColor = "green";
+            tarjeta.style.border = "2px solid black";
+            tarjeta.style.width = "100px";
+            tarjeta.style.height = "100px";
+            tarjeta.style.float = "left";
+            granDiv.appendChild(tarjeta);
+
+            const botonEliminar = document.createElement("button");
+            botonEliminar.textContent = "Eliminar";
+            botonEliminar.addEventListener("click",function(){
+                granDiv.removeChild(tarjeta);
+            });
+            tarjeta.appendChild(botonEliminar);
+        });
+    </script>
+</body>
+</html>

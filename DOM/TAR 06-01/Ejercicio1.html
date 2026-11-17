@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1 id="titulo">Bienvenido</h1>
+    <p class="mensaje">Texto original</p>
+    <button id="cambiar">Cambiar texto</button>
+    <script>
+        const titulo = document.getElementById("titulo");
+        const pe = document.querySelector("p");
+        const cuerpecito = document.querySelector("body");
+        const boton = document.getElementById("cambiar");
+        boton.addEventListener("click",function(){
+            titulo.textContent = "DOM Modificado";
+            pe.style.color = "blue";
+            cuerpecito.style.backgroundColor = "grey";
+        });
+    </script>
+</body>
+</html>
