@@ -5,11 +5,14 @@ export class Casa{
     #caracteristicas;
     #personajes = [];
     #fraseConocida;
-    constructor(nombre,region,lema,caracteristicas){
+    #escudo;
+    constructor(nombre,region,lema,caracteristicas,...personajes){
         this.#nombre = nombre;
         this.#region = region;
         this.#lema = lema;
         this.#caracteristicas = caracteristicas;
+        this.#personajes = personajes;
+        this.#escudo = 'imagenes/escudo_'+nombre+'.png';
     }
     get getNombre(){return this.#nombre;}
     set setNombre(nombre){this.#nombre = nombre;}
@@ -27,27 +30,8 @@ export class Casa{
     set setFraseConocida(fraseConocida){this.#fraseConocida = fraseConocida;}
 
     get getPersonajes(){return this.#personajes;}
+    set setPersonajes(personajes){this.#personajes = personajes;}
 
-    anadirMiembro(miembro){
-        if(!this.#personajes.find(x => x == miembro) && miembro.getEstado == 'vivo'){
-            this.#personajes.push(miembro);
-            console.log(miembro.getNombre+" ha sido añadido a la casa "+this.#nombre);
-            miembro.setCasa = this;
-        }
-        else 
-            console.log(miembro.getNombre+" ya es miembro de la casa "+this.#nombre);
-    }
-    quitarMiembro(miembro){
-        if(this.#personajes.find(x => x == miembro)){
-            this.#personajes.pop(miembro);
-            console.log(miembro.getNombre+" ha sido expulsado de la casa "+this.#nombre);
-            miembro.setCasa = undefined;
-        }
-        else 
-            console.log(miembro.getNombre+" no estaba en la casa "+this.#nombre);
-    }
-    listarMiembros(){
-        console.log("Miembros de la casa "+this.#nombre+": ");
-        this.#personajes.forEach(miembro => console.log("- "+miembro.getNombre));
-    }
+    get getEscudo(){return this.#escudo;}
+    set setEscudo(escudo){this.#escudo = escudo;}
 }
