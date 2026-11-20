@@ -1,0 +1,15 @@
+.personaje{
+    float:left;
+    width: 550px;
+    height: 300px;
+}
+.imagen{
+    width: 300px;
+    height: 300px;
+    float:left;
+}
+.informacion{
+    width: 200px;
+    height: auto;
+    float:left;
+}
